@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+  
+    "name": "ID Finder",
+    "description": "Find ID of campaigns and ad groups in Google Ads.",
+    "version": "1.0",
+    "permissions": [
+     "storage", "tabs", "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_title": "ID Finder"
+    }
+  }
