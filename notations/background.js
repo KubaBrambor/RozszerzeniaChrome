@@ -6,8 +6,8 @@ chrome.alarms.onAlarm.addListener(function( alarm ) {
                 iconUrl: 'icon.jpg',
                 message: alarm.name
             }
+            
             chrome.notifications.create('notificationOne', notifOpt, function(id){
-                alert(new Date(time));
             })
   });
  
