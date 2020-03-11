@@ -1,0 +1,13 @@
+button {
+    margin: 0px 0px 10px 0px;
+    width: 100px;
+}
+
+#title, #message, #dateAndTime {
+    width: 210px;
+    margin: 0px 10px 10px 10px;
+}
+
+#title {
+    margin-top: 10px;
+}

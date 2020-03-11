@@ -12,7 +12,10 @@
 //         alert(new Date(time));
 //     })
 // }, 3000);
-chrome.alarms.create('notify alarm', {when: Date.now() + 4000})
+
+// chrome.alarms.create('notify alarm', {when: Date.now() + 4000})
+
+
 
 
 

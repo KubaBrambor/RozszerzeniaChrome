@@ -1,3 +1,5 @@
+import Notification from './notification';
+
 chrome.alarms.onAlarm.addListener(function( alarm ) {
     console.log("Got an alarm!", alarm);
     let notifOpt = {

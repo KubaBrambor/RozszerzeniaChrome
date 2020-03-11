@@ -3,13 +3,13 @@
     "version": "1.0",
     "description": "Build an Extension!",
     "permissions": [
-        "storage",
-        "notifications",
-        "alarms",
-        "activeTab",
-        "tabs",
-        "http://*/*",
-        "https://*/*"
+      "management", 
+      "tabs", 
+      "storage",  
+      "<all_urls>",
+      "identity",
+      "notifications", 
+      "alarms"
     ],
     "background": {
       "scripts": ["background.js"],
@@ -18,15 +18,18 @@
     "browser_action": {
       "default_popup": "popup.html"
     },
-    "content_scripts": [
-      {
-        "matches": [
-          "http://*/*",
-          "https://*/*"
-        ],
-        "js": ["content.js"]
-      }
-    ],
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content.js"],
+      "run_at": "document_end",
+      "matches": [
+        "<all_urls>"
+      ]
+     }],
     "manifest_version": 2
   }
+
+
+ 
+
+    
