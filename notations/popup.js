@@ -14,16 +14,16 @@
 // }, 3000);
 
 // chrome.alarms.create('notify alarm', {when: Date.now() + 4000})
-// chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
-//     chrome.tabs.sendMessage(tabs[0].id, {createAlarm: true, message: 'sending to extension'}, (response) => {
-//         console.log('message arrived');
-//     })
-// })
 
 const buttonClicked = () => {
-    console.log(document.getElementById('dateAndTime').value)
-    console.log('hi!')
+    chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, {createAlarm: true, message: document.getElementById('messageInput').value}, (response) => {
+            console.log('message arrived');
+        })
+    })
 }
+
+document.getElementById('submitButton').addEventListener('click', buttonClicked);
 
 
 
