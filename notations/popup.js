@@ -17,10 +17,18 @@
 
 const buttonClicked = () => {
     chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
-        chrome.tabs.sendMessage(tabs[0].id, {createAlarm: true, message: document.getElementById('messageInput').value}, (response) => {
+        chrome.tabs.sendMessage(tabs[0].id, {
+            createAlarm: true, 
+            message: document.getElementById('messageInput').value,
+            date: document.getElementById('dateInput').value,
+            time: document.getElementById('timeInput').value},
+            (response) => {
             console.log('message arrived');
         })
     })
+
+    let timeNow;
+
 }
 
 document.getElementById('submitButton').addEventListener('click', buttonClicked);

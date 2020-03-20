@@ -9,17 +9,17 @@
 </head>
 <body>
     <form>
-        <div class="form-group" id="title">
-            <label for="exampleFormControlInput1">Notation title</label>
-            <input type="text" class="form-control" id="titleInput" placeholder="name@example.com">
-        </div>
         <div class="form-group" id="message">
             <label for="exampleFormControlTextarea1">Notation message</label>
             <textarea class="form-control" id="messageInput" rows="3"></textarea>
         </div>
         <div class="form-group" id="dateAndTime">
             <label for="exampleFormControlInput1">Notation date</label>
-            <input type="datetime-local" class="form-control form-control-sm" id="dateAndTimeInput">
+            <input type="date" class="form-control form-control-sm" id="dateInput">
+        </div>
+        <div class="form-group" id="dateAndTime">
+            <label for="exampleFormControlInput1">Notation date</label>
+            <input type="time" class="form-control form-control-sm" id="timeInput">
         </div>
         <div class="col-md-4 text-center"> 
             <button type="submit" class="btn btn-primary" id="submitButton">Add note</button>
