@@ -1,20 +1,3 @@
-
-// let time = Date.now();
-// time += 1000000;
-// setTimeout(function(){
-//     let notifOpt = {
-//         type: 'basic',
-//         title: 'limit reached',
-//         iconUrl: 'icon.jpg',
-//         message: 'notification works!',
-//     }
-//     chrome.notifications.create('notificationOne', notifOpt, function(id){
-//         alert(new Date(time));
-//     })
-// }, 3000);
-
-// chrome.alarms.create('notify alarm', {when: Date.now() + 4000})
-
 const buttonClicked = () => {
     chrome.tabs.query({active:true, currentWindow:true}, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, {
@@ -26,9 +9,14 @@ const buttonClicked = () => {
             console.log('message arrived');
         })
     })
-
-    let timeNow;
-
+    
+    let message = document.getElementById('messageInput').value;
+    let timeNow = new Date();
+    let timeToSet = new Date(document.getElementById('dateInput').value + ' ' + document.getElementById('timeInput').value);
+    let estimatedMiliseconds = timeToSet.getTime() - timeNow.getTime();
+    
+    chrome.alarms.create(message, {when: Date.now() + estimatedMiliseconds})
+    
 }
 
 document.getElementById('submitButton').addEventListener('click', buttonClicked);
